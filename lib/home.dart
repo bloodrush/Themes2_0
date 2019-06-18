@@ -161,29 +161,31 @@ class _HomeScreenState extends State<HomeScreen> {
               Divider(
                 height: 50.0,
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: <Widget>[
-                  Text('Dark theme'),
-                  Switch(
-                    value: themeSwitch,
-                    onChanged: (newValue) {
-                      print(newValue);
+              Container(
+                margin: EdgeInsets.only(left: 10.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    Text('Dark theme'),
+                    Switch(
+                      activeColor: Theme.of(context).primaryColor,
+                      value: themeSwitch,
+                      onChanged: (newValue) {
+                        if(newValue) {
+                          _changeTheme(context, MyThemeKeys.DARK);
+                        }else {
+                          _changeTheme(context, MyThemeKeys.LIGHT);
+                        }
 
-                      if(newValue) {
-                        _changeTheme(context, MyThemeKeys.DARK);
-                      }else {
-                        _changeTheme(context, MyThemeKeys.LIGHT);
-                      }
-
-                      setState(() {
-                        themeSwitch = newValue;
-                      });
+                        setState(() {
+                          themeSwitch = newValue;
+                        });
 
 
-                    },
-                  )
-                ],
+                      },
+                    )
+                  ],
+                ),
               ),
             ],
           ),
@@ -224,24 +226,21 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
                 Center(
                   child:
-                          Text(
-                        'ZOE',
-                        style: TextStyle(
-                            fontFamily: 'Plaster',
-                            fontSize: 72.0,
-                            color: Theme.of(context).primaryColor),
-                      )
-//                  Hero(
-//                    tag: "logo",
-//                    child: Image.asset("images/bgr.png"),
-
-
-
-//                  ),
+//                          Text(
+//                        'ZOE',
+//                        style: TextStyle(
+//                            fontFamily: 'Plaster',
+//                            fontSize: 72.0,
+//                            color: Theme.of(context).primaryColor),
+//                      )
+                  Hero(
+                    tag: "logo",
+                    child: Image.asset("images/logo.png", width: 200.0,),
+                  ),
                 ),
-                SizedBox(
-                  height: 25.0,
-                ),
+//                SizedBox(
+//                  height: 25.0,
+//                ),
                 Stack(
                   alignment: Alignment.bottomCenter,
                   children: <Widget>[

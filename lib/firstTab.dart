@@ -11,10 +11,10 @@ class FirstTab extends StatelessWidget {
       <CircularStackEntry>[
         new CircularStackEntry(
           <CircularSegmentEntry>[
-            new CircularSegmentEntry(500.0, Theme.of(context).accentColor,
+            new CircularSegmentEntry(500.0, Theme.of(context).primaryColor,
                 rankKey: 'Q1'),
-            new CircularSegmentEntry(1000.0, Theme.of(context).primaryColor, rankKey: 'Q2'),
-            new CircularSegmentEntry(2000.0, Colors.pink, rankKey: 'Q3'),
+            new CircularSegmentEntry(1000.0, Theme.of(context).primaryColorDark, rankKey: 'Q2'),
+            new CircularSegmentEntry(2000.0, Theme.of(context).primaryColorLight, rankKey: 'Q3'),
           ],
           rankKey: 'Quarterly Profits',
         ),
@@ -124,7 +124,7 @@ class FirstTab extends StatelessWidget {
                       width: 5,
                       height: 40,
                       decoration:
-                          BoxDecoration(color: Theme.of(context).accentColor),
+                          BoxDecoration(color: Theme.of(context).primaryColorLight),
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,

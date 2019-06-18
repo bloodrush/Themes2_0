@@ -26,7 +26,7 @@ class _Dashboard extends State<Dashboard> {
           ),
           title: Hero(
             tag: "logo",
-            child: Icon(Icons.access_alarm),
+            child: Image.asset("images/logo.png", width: 80.0,),
 
 //            Text('ZOE', style: TextStyle(
 //              fontFamily: 'Plaster',
