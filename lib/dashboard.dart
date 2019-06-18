@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart' show timeDilation;
+//import 'package:flutter/scheduler.dart' show timeDilation;
 import 'firstTab.dart';
 import 'secondTab.dart';
 
@@ -13,9 +13,7 @@ class _Dashboard extends State<Dashboard> {
 
   @override
   Widget build(BuildContext context) {
-
     return DefaultTabController(
-
       length: 2,
       child: Scaffold(
         appBar: AppBar(
@@ -28,11 +26,14 @@ class _Dashboard extends State<Dashboard> {
           ),
           title: Hero(
             tag: "logo",
-            child: Text('ZOE', style: TextStyle(
-                fontFamily: 'Plaster',
-//              fontSize: 8.0,
-            )
-            ),
+            child: Icon(Icons.access_alarm),
+
+//            Text('ZOE', style: TextStyle(
+//              fontFamily: 'Plaster',
+////              fontSize: 8.0,
+//            )
+//            ),
+//
           ),
         ),
         body: TabBarView(
