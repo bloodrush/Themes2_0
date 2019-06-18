@@ -19,11 +19,11 @@ class MyThemes {
   );
 
   static final ThemeData darkTheme = ThemeData(
-    primarySwatch: Colors.purple,
-    primaryColor: Colors.purple,
-    primaryColorDark: Colors.purple[900],
-    primaryColorLight: Colors.purple[100],
-    accentColor: Colors.purpleAccent,
+    primarySwatch: Colors.pink,
+    primaryColor: Colors.pink,
+    primaryColorDark: Colors.pink[900],
+    primaryColorLight: Colors.pinkAccent[100],
+    accentColor: Colors.pinkAccent,
     backgroundColor: Colors.black87,
     brightness: Brightness.dark,
     fontFamily: 'Montserrat',
@@ -31,13 +31,13 @@ class MyThemes {
       hasFloatingPlaceholder: false,
       border: OutlineInputBorder(),
     ),
-    cursorColor: Colors.purple,
+    cursorColor: Colors.pinkAccent,
     buttonTheme: ButtonThemeData(
         shape: Border(left: BorderSide(width: 10.0, color: Colors.black54))
 
     ),
       iconTheme: IconThemeData(
-          color: Colors.purple[300]
+          color: Colors.pinkAccent[300]
       )
   );
 

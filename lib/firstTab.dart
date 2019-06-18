@@ -71,7 +71,7 @@ class FirstTab extends StatelessWidget {
                             ],
                           ),
                           Container(
-                            margin: EdgeInsets.only(left: 100),
+                            margin: EdgeInsets.only(right: 10),
                             child: Text(
                               '\u0024 1,110.09',
                               style: TextStyle(fontSize: 24),
@@ -110,7 +110,7 @@ class FirstTab extends StatelessWidget {
                             ],
                           ),
                           Container(
-                            margin: EdgeInsets.only(left: 26),
+                            margin: EdgeInsets.only(right: 10),
                             child: Text(
                               '\u0024 2,110.09',
                               style: TextStyle(fontSize: 24),
@@ -150,6 +150,7 @@ class FirstTab extends StatelessWidget {
                             ],
                           ),
                           Container(
+                            margin: EdgeInsets.only(right:10),
                             child: Text(
                               '\u0024 5,910.99',
                               style: TextStyle(fontSize: 24),
