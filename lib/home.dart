@@ -7,7 +7,6 @@ import 'password.dart';
 class HomeScreen extends StatefulWidget {
   @override
   _HomeScreenState createState() => _HomeScreenState();
-
 }
 
 class _HomeScreenState extends State<HomeScreen> {
@@ -17,12 +16,32 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
+
     return Scaffold(
       drawer: Drawer(
         child: ListView(
           padding: EdgeInsets.zero,
           children: <Widget>[
-            DrawerHeader(),
+            SizedBox(
+              child: DrawerHeader(
+                child: Column(
+                  children: <Widget>[
+                    Text(
+                      'ZOE',
+                      style: TextStyle(
+                          fontFamily: 'Plaster',
+                          fontSize: 72.0,
+                          color: Theme.of(context).primaryColor),
+                    ),
+                    Text('Financial solutions',
+                    style: TextStyle(
+                      fontFamily: 'Plaster'
+                    ),)
+                  ],
+                ),
+              ),
+            ),
             ListTile(
               title: Row(
                 mainAxisAlignment: MainAxisAlignment.start,
@@ -140,6 +159,7 @@ class _HomeScreenState extends State<HomeScreen> {
               height: 50.0,
             ),
             Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <Widget>[
                 RaisedButton(
                   onPressed: () {
@@ -153,12 +173,12 @@ class _HomeScreenState extends State<HomeScreen> {
                   },
                   child: Text("Dark!"),
                 ),
-                RaisedButton(
-                  onPressed: () {
-                    _changeTheme(context, MyThemeKeys.DARKER);
-                  },
-                  child: Text("Darker!"),
-                ),
+//                RaisedButton(
+//                  onPressed: () {
+//                    _changeTheme(context, MyThemeKeys.DARKER);
+//                  },
+//                  child: Text("Darker!"),
+//                ),
               ],
             )
           ],
@@ -166,56 +186,144 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       appBar: AppBar(
         backgroundColor: Theme.of(context).primaryColor,
-        title: Text("Homepage"),
+        title: Text(""),
       ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
+      body:Stack(
         children: <Widget>[
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 40.0),
-            child: Column(
-              children: <Widget>[
-                TextField(
-                  decoration: InputDecoration(
-                      labelText: ('User name'),
-                      icon: Padding(
-                          padding: EdgeInsets.only(top: 15.0),
-                          child: Icon(Icons.person, size: 32.0))),
+          Container(
+            decoration: new BoxDecoration(
+              image: new DecorationImage(
+                image: new AssetImage("images/bgr.png"),
+                fit: BoxFit.fill,
+              ),
+            ),
+            child: Container()
+          ),
+          Container(
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+                // Add one stop for each color. Stops should increase from 0 to 1
+                stops: [0.1, 0.7],
+                colors: [
+                  // Colors are easy thanks to Flutter's Colors class.
+                  Theme.of(context).primaryColor.withOpacity(0.1),
+                  Theme.of(context).backgroundColor.withOpacity(0.7),
+                ],
+              ),
+            ),
+          ),
+        ListView(
+          children: <Widget>[
+            SizedBox(
+              height: MediaQuery.of(context).size.height/10 ,
+            ),
+            Center(
+              child: Hero(
+                tag: "logo",
+                child: Text(
+                  'ZOE',
+                  style: TextStyle(
+                      fontFamily: 'Plaster',
+                      fontSize: 72.0,
+                      color: Theme.of(context).primaryColor),
                 ),
-                SizedBox(height: 10.0,),
-
-
-                PasswordField(
+              ),
+            ),
+            SizedBox(
+              height: 25.0,
+            ),
+            Stack(
+              alignment: Alignment.bottomCenter,
+              children: <Widget>[
+                Card(
+                    margin: EdgeInsets.only(bottom: 20.0, left: 40.0, right: 40.0),
+                    child: Padding(
+                      padding: EdgeInsets.only(left: 20.0, right: 20.0, top: 20.0, bottom: 50.0),
+                      child: Column(
+                        mainAxisSize: MainAxisSize.max,
+                        children: <Widget>[
+                          TextField(
+                            decoration: InputDecoration(
+                                labelText: ('User name'),
+                                icon: Padding(
+                                    padding: EdgeInsets.only(top: 15.0),
+                                    child: Icon(Icons.person, size: 32.0))),
+                          ),
+                          SizedBox(
+                            height: 10.0,
+                          ),
+                          PasswordField(
 //                  fieldKey: _passwordFieldKey,
 //                  helperText: 'No more than 8 characters.',
-                  labelText: 'Password',
+                            labelText: 'Password',
 //                  onFieldSubmitted: (String value) {
 //                    setState(() {
 //                      this._password = value;
 //                    });
 //                  },
-                ),
-                SizedBox(height: 10.0,),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: <Widget>[
-                    RaisedButton(
-                      child: Text('EXIT'),
-                      onPressed: ( ()=> {}),
-                    ),
-                    RaisedButton(
-                      child: Text('LOGIN'),
-                      onPressed: ( ()=> {}),
-
-                    )
-                  ],
-                ),
-
+                          ),
+                        ],
+                      ),
+                    )),
+                SizedBox(
+                  width: 180.0,
+                  height: 40.0,
+                  child: RaisedButton(
+                    child: Text('LOGIN', style:TextStyle(fontSize: 20.0, color: Colors.white),),
+                    onPressed: (() => {
+                    Navigator.pushNamed(context, "/dashboard")
+                    }),
+                  ),
+                )
               ],
             ),
-          )
+            SizedBox(
+              height: 30,
+            ),
+            Container(
+              child: Text(
+                'Forgot password',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontStyle: FontStyle.italic,
+                  decoration: TextDecoration.underline,),
+              ),
+            ),
+            SizedBox(
+              height: 30,
+            ),
+            Container(
+              padding: EdgeInsets.symmetric(horizontal: 20.0),
+              child: Divider(),
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            Container(
+                margin: EdgeInsets.only(bottom: 30.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    RaisedButton(
+                        child: Icon(FontAwesomeIcons.facebookF, color: Colors.white,),
+                        onPressed: () {},
+                        shape: CircleBorder()),
+                    RaisedButton(
+                        child: Icon(FontAwesomeIcons.google, color: Colors.white,),
+                        onPressed: () {},
+                        shape: CircleBorder())
+                  ],
+                )),
+
+          ],
+        )
+
+
         ],
-      ),
+      )
+
     );
   }
 }
