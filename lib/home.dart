@@ -15,6 +15,8 @@ class _HomeScreenState extends State<HomeScreen> {
     CustomTheme.instanceOf(buildContext).changeTheme(key);
   }
 
+  bool themeSwitch = false;
+
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -160,28 +162,29 @@ class _HomeScreenState extends State<HomeScreen> {
                 height: 50.0,
               ),
               Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
-                  RaisedButton(
-                    onPressed: () {
-                      _changeTheme(context, MyThemeKeys.LIGHT);
+                  Text('Dark theme'),
+                  Switch(
+                    value: themeSwitch,
+                    onChanged: (newValue) {
+                      print(newValue);
+
+                      if(newValue) {
+                        _changeTheme(context, MyThemeKeys.DARK);
+                      }else {
+                        _changeTheme(context, MyThemeKeys.LIGHT);
+                      }
+
+                      setState(() {
+                        themeSwitch = newValue;
+                      });
+
+
                     },
-                    child: Text("Light!"),
-                  ),
-                  RaisedButton(
-                    onPressed: () {
-                      _changeTheme(context, MyThemeKeys.DARK);
-                    },
-                    child: Text("Dark!"),
-                  ),
-//                RaisedButton(
-//                  onPressed: () {
-//                    _changeTheme(context, MyThemeKeys.DARKER);
-//                  },
-//                  child: Text("Darker!"),
-//                ),
+                  )
                 ],
-              )
+              ),
             ],
           ),
         ),
@@ -220,18 +223,21 @@ class _HomeScreenState extends State<HomeScreen> {
                   height: MediaQuery.of(context).size.height / 10,
                 ),
                 Center(
-                  child: Hero(
-                    tag: "logo",
-                    child: Icon(Icons.access_alarm),
+                  child:
+                          Text(
+                        'ZOE',
+                        style: TextStyle(
+                            fontFamily: 'Plaster',
+                            fontSize: 72.0,
+                            color: Theme.of(context).primaryColor),
+                      )
+//                  Hero(
+//                    tag: "logo",
+//                    child: Image.asset("images/bgr.png"),
 
-//                      Text(
-//                        'ZOE',
-//                        style: TextStyle(
-//                            fontFamily: 'Plaster',
-//                            fontSize: 72.0,
-//                            color: Theme.of(context).primaryColor),
-//                      )
-                  ),
+
+
+//                  ),
                 ),
                 SizedBox(
                   height: 25.0,

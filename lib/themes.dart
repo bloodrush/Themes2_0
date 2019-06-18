@@ -6,6 +6,8 @@ class MyThemes {
   static final ThemeData lightTheme = ThemeData(
     primarySwatch: Colors.blue,
     backgroundColor: Colors.white,
+    primaryColorLight: Colors.blue[100],
+    primaryColorDark: Colors.blue[900],
     brightness: Brightness.light,
     buttonColor: Colors.blue,
     iconTheme: IconThemeData(

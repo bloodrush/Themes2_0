@@ -20,8 +20,8 @@ class _Dashboard extends State<Dashboard> {
           centerTitle: true,
           bottom: TabBar(
             tabs: [
-              Tab(icon: Icon(Icons.directions_car)),
-              Tab(icon: Icon(Icons.directions_transit))
+              Tab(icon: Icon(Icons.pie_chart)),
+              Tab(icon: Icon(Icons.picture_in_picture))
             ],
           ),
           title: Hero(
