@@ -13,8 +13,11 @@ class FirstTab extends StatelessWidget {
           <CircularSegmentEntry>[
             new CircularSegmentEntry(500.0, Theme.of(context).primaryColor,
                 rankKey: 'Q1'),
-            new CircularSegmentEntry(1000.0, Theme.of(context).primaryColorDark, rankKey: 'Q2'),
-            new CircularSegmentEntry(2000.0, Theme.of(context).primaryColorLight, rankKey: 'Q3'),
+            new CircularSegmentEntry(1000.0, Theme.of(context).primaryColorDark,
+                rankKey: 'Q2'),
+            new CircularSegmentEntry(
+                2000.0, Theme.of(context).primaryColorLight,
+                rankKey: 'Q3'),
           ],
           rankKey: 'Quarterly Profits',
         ),
@@ -51,29 +54,31 @@ class FirstTab extends StatelessWidget {
                       decoration:
                           BoxDecoration(color: Theme.of(context).primaryColor),
                     ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: <Widget>[
-                        Column(
-                          children: <Widget>[
-                            Text(
-                              'Due amount',
-                              style: TextStyle(fontSize: 16),
-                            ),
-                            Text(
-                              'Due by 24/07/2019',
-                              style: TextStyle(fontSize: 10),
-                            )
-                          ],
-                        ),
-                        Container(
-                          margin: EdgeInsets.only(left: 100),
-                          child: Text(
-                            '\u0024 1,110.09',
-                            style: TextStyle(fontSize: 24),
+                    Expanded(
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: <Widget>[
+                          Column(
+                            children: <Widget>[
+                              Text(
+                                'Due amount',
+                                style: TextStyle(fontSize: 16),
+                              ),
+                              Text(
+                                'Due by 24/07/2019',
+                                style: TextStyle(fontSize: 10),
+                              )
+                            ],
                           ),
-                        ),
-                      ],
+                          Container(
+                            margin: EdgeInsets.only(left: 100),
+                            child: Text(
+                              '\u0024 1,110.09',
+                              style: TextStyle(fontSize: 24),
+                            ),
+                          ),
+                        ],
+                      ),
                     )
                   ],
                 ),
@@ -88,30 +93,31 @@ class FirstTab extends StatelessWidget {
                       decoration: BoxDecoration(
                           color: Theme.of(context).primaryColorDark),
                     ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: <Widget>[
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: <Widget>[
-                            Text(
-                              '3rd party dues',
-                              style: TextStyle(fontSize: 16),
-                            ),
-                            Text(
-                              'Due by 12/11/2019',
-                              style: TextStyle(fontSize: 10),
-                            )
-                          ],
-                        ),
-                        Container(
-                          margin: EdgeInsets.only(left: 26),
-                          child: Text(
-                            '\u0024 2,110.09',
-                            style: TextStyle(fontSize: 24),
+                    Expanded(
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: <Widget>[
+                          Column(
+                            children: <Widget>[
+                              Text(
+                                '3rd party dues',
+                                style: TextStyle(fontSize: 16),
+                              ),
+                              Text(
+                                'Due by 12/11/2019',
+                                style: TextStyle(fontSize: 10),
+                              )
+                            ],
                           ),
-                        ),
-                      ],
+                          Container(
+                            margin: EdgeInsets.only(left: 26),
+                            child: Text(
+                              '\u0024 2,110.09',
+                              style: TextStyle(fontSize: 24),
+                            ),
+                          ),
+                        ],
+                      ),
                     )
                   ],
                 ),
@@ -123,32 +129,34 @@ class FirstTab extends StatelessWidget {
                       margin: EdgeInsets.symmetric(vertical: 5, horizontal: 10),
                       width: 5,
                       height: 40,
-                      decoration:
-                          BoxDecoration(color: Theme.of(context).primaryColorLight),
+                      decoration: BoxDecoration(
+                          color: Theme.of(context).primaryColorLight),
                     ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: <Widget>[
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: <Widget>[
-                            Text(
-                              'Other dues',
-                              style: TextStyle(fontSize: 16),
-                            ),
-                            Text(
-                              'Due by 24/07/2019',
-                              style: TextStyle(fontSize: 10),
-                            )
-                          ],
-                        ),
-                        Container(
-                          child: Text(
-                            '\u0024 5,910.99',
-                            style: TextStyle(fontSize: 24),
+                    Expanded(
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: <Widget>[
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: <Widget>[
+                              Text(
+                                'Other dues',
+                                style: TextStyle(fontSize: 16),
+                              ),
+                              Text(
+                                'Due by 24/07/2019',
+                                style: TextStyle(fontSize: 10),
+                              )
+                            ],
                           ),
-                        ),
-                      ],
+                          Container(
+                            child: Text(
+                              '\u0024 5,910.99',
+                              style: TextStyle(fontSize: 24),
+                            ),
+                          ),
+                        ],
+                      ),
                     )
                   ],
                 ),
